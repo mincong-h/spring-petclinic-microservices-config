@@ -30,6 +30,8 @@ management:
       endpoint: http://tracing-server:9411/api/v2/spans
 
 ---
+server:
+  port: 8083
 spring:
   config:
     activate:
