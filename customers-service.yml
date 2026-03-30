@@ -1,4 +1,15 @@
-﻿spring:
+﻿server:
+  port: 8081
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  cloud:
+    discovery:
+      enabled: false
+
+---
+spring:
   config:
     activate:
       on-profile: default
@@ -22,14 +33,3 @@ management:
   zipkin:
     tracing:
       endpoint: http://tracing-server:9411/api/v2/spans
-
----
-server:
-  port: 8081
-spring:
-  config:
-    activate:
-      on-profile: kubernetes
-  cloud:
-    discovery:
-      enabled: false
