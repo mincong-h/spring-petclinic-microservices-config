@@ -30,3 +30,12 @@ management:
   zipkin:
     tracing:
       endpoint: http://tracing-server:9411/api/v2/spans
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kubernetes
+  cloud:
+    discovery:
+      enabled: false
